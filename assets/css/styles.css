@@ -106,6 +106,15 @@ img{
 	text-align: center;
 }
 
+.section-subtitle{
+	display: block;
+	font-size: var(--small-font-size);
+	color: var(--first-color-darken);
+	text-align: center;
+	font-weight: var(--font-bold);
+	margin-bottom: 0.25rem;
+}
+
 /*===== LAYOUT =====*/
 
 
