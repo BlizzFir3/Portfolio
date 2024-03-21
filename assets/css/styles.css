@@ -14,7 +14,7 @@
 	--first-color: #692ccc;
 	--first-color-dark: #4c2092;
 	--first-color-darken: #2c1355;
-	--text-color: #9c96a7;
+	--text-color: #736f7a;
 	--first-color-light: #e4d6fa;
 	--first-color-lighten: #f4f2f7;
 
@@ -133,7 +133,7 @@ img{
 	left: 0;
 	z-index: var(--z-fixed);
 	background-color: var(--first-color-lighten);
-	box-shadow: 0 2px 4px rgba(0,0,0,.1);
+	box-shadow: 0 2px 4px rgba(0,0,0,.3);
 }
 
 /*===== NAV =====*/
@@ -147,7 +147,7 @@ img{
 .nav__menu{
 	position: fixed;
 	top: 0;
-	left: 0;
+	left: -100%;
 	width: 90%;
 	height: 100vh;
 	padding: 3rem;
@@ -157,11 +157,46 @@ img{
 	transition: .5s;
 }
 
-/*=== Show menu ===*/
+.nav__close{
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	font-size: 2rem;
+	color: var(--first-color-dark);
+	cursor: pointer;
+}
 
+.nav__item{
+	margin-bottom: var(--mb-4);
+}
+
+.nav__link{
+	font-size: 1rem;
+	text-transform: uppercase;
+	color: var(--first-color-lighten);
+	font-weight: var(--font-bold);
+	transition: .3s;
+}
+
+.nav__link:hover{
+	color: var(--text-color);
+}
+
+.nav__toggle{
+	color: var(--first-color-dark);
+	font-size: 1.3rem;
+	cursor: pointer;
+}
+
+/*=== Show menu ===*/
+.show{
+	left: 0;
+}
 
 /*Active menu*/
-
+.active{
+	color: var(--text-color);
+}
 
 /*===== HOME =====*/
 
