@@ -291,9 +291,70 @@
 			</section>
 
             <!-- ===== CONTACT ===== -->
+			<section class="contact section" id="contact">
+				<span class="section-subtitle">Me Contacter</span>
+				<h2 class="section-title">Envoyer Un Message</h2>
+
+				<div class="contact__container bd-grid">
+					<form action="" class="contact__form">
+						<div class="contact__inputs">
+							<input type="text" name="name" placeholder="Nom" class="contact__input">
+							<input type="mail" name="email" placeholder="Email" class="contact__input">
+						</div>
+						<input type="text" name="sujet" placeholder="Projet" class="contact__input">
+
+						<textarea name="message" id="" cols="0" rows="10" placeholder="Message" class="contact__input"></textarea>
+
+						<input type="submit" value="Envoyer Le Messsage" class="button contact__button">
+					</form>
+
+					<?php
+					if (isset($_POST["message"])) {
+						$message = "Ce message vous a été envoyé via la page contact du site Portfolio de Quentin HERITIER
+						Nom : " . $_POST["name"] ."
+						Email : " . $_POST["email"] . "
+						Message : " . $_POST["message"];
+						$retour = mail("quentheritier@gmail.com", $_POST["sujet"], $message, "From:" . $_POST["email"]);
+						if ($retour) {
+							echo "<p>L'email a bien été envoyé"
+						}
+					?>
+
+					<div>
+						<div class="contact__info">
+							<h3 class="contact__subtitle">M'appeler</h3>
+							<span class="contact__text">07 82 82 76 14</span>
+						</div>
+
+						<div class="contact__info">
+							<h3 class="contact__subtitle">E-mail</h3>
+							<span class="contact__text">quentheritier@gmail.com</span>
+						</div>
+
+						<div class="contact__info">
+							<h3 class="contact__subtitle">Localisation</h3>
+							<span class="contact__text">Le Puy-en-Velay</span>
+							<span class="contact__text">Haute-Loire - France</span>
+						</div>
+					</div>
+				</div>
+			</section>
+		
 		</main>
 
 		<!-- ===== Footer ===== -->
+		<footer class="footer section">
+			<div class="footer__container bd-grid">
+				<h1 class="footer__title">Quentin</h1>
+				<p class="footer__description">Je suis Quentin, et ceci est mon site web personnel</p>
+
+				<div class="footer__social">
+					<a href="https://www.instagram.com/_0.1_1001/" class="footer__link"><i class='bx bxl-instagram'></i></a>
+				</div>
+
+				<p class="footer__copy">All right reserved by HERITIER Quentin - 2024</p>
+			</div>
+		</footer>
 
 		<!-- ===== MAIN JS =====  -->
 		<script src="./assets/js/main.js"></script>
