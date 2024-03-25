@@ -296,14 +296,14 @@
 				<h2 class="section-title">Envoyer Un Message</h2>
 
 				<div class="contact__container bd-grid">
-					<form action="" class="contact__form">
+					<form method="post" class="contact__form">
 						<div class="contact__inputs">
-							<input type="text" name="name" placeholder="Nom" class="contact__input">
-							<input type="mail" name="email" placeholder="Email" class="contact__input">
+							<input type="text" name="name" placeholder="Nom" class="contact__input" required>
+							<input type="mail" name="email" placeholder="Email" class="contact__input" required>
 						</div>
-						<input type="text" name="sujet" placeholder="Projet" class="contact__input">
+						<input type="text" name="sujet" placeholder="Projet" class="contact__input" required>
 
-						<textarea name="message" id="" cols="0" rows="10" placeholder="Message" class="contact__input"></textarea>
+						<textarea name="message" id="" cols="0" rows="10" placeholder="Message" class="contact__input" required></textarea>
 
 						<input type="submit" value="Envoyer Le Messsage" class="button contact__button">
 					</form>
@@ -316,7 +316,7 @@
 						Message : " . $_POST["message"];
 						$retour = mail("quentheritier@gmail.com", $_POST["sujet"], $message, "From:" . $_POST["email"]);
 						if ($retour) {
-							echo "<p>L'email a bien été envoyé"
+							echo "<p>L'email a bien été envoyé.</p>"
 						}
 					?>
 
